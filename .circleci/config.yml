@@ -1,0 +1,33 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.1.0
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/node:20.0
+    steps:
+      - checkout
+      - node/install-packages
+      - run: npm test
+
+  deploy:
+    docker:
+      - image: cimg/node:20.0
+    steps:
+      - checkout
+      - run: npm run build
+      - run: echo "Desplegando aplicación..."
+
+workflows:
+  version: 2
+  ci_cd_pipeline:
+    jobs:
+      - build-and-test
+      - deploy:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: main
