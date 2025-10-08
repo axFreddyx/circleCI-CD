@@ -17,8 +17,8 @@ jobs:
       - image: cimg/node:20.0
     steps:
       - checkout
-      - run: npm run build
-      - run: echo "Desplegando aplicación..."
+      - run: npm install
+      - run: npm test
 
 workflows:
   version: 2
