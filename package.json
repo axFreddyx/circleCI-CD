@@ -1,0 +1,13 @@
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "description": "Proyecto de ejemplo para CircleCI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"✅ Tests ejecutados correctamente\"",
+    "build": "echo \"Construcción simulada\""
+  },
+  "author": "Tu nombre",
+  "license": "MIT",
+  "dependencies": {}
+}
